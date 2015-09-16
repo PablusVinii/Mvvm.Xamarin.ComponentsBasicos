@@ -13,6 +13,7 @@ namespace MyComponents
         {
             // The root page of your application
             MainPage = new ClientePage();
+
         }
 
         protected override void OnStart()
