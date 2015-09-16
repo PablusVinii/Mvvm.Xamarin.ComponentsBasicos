@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MyComponents.ViewModel;assembly=MyComponents"
+             xmlns:control="clr-namespace:MyComponents.Control;assembly=MyComponents"
+             x:Class="MyComponents.View.ClientePage">
+
+  <StackLayout Orientation="Vertical">
+    <StackLayout.BindingContext>
+      <viewModel:ClienteViewModel/>
+    </StackLayout.BindingContext>
+    <Entry Text="{Binding CurrentModel.Nome}" Placeholder="diegite seu nome" />
+    <DatePicker Date="{Binding CurrentModel.DtNascimento}"/>
+    <Switch IsToggled="{Binding CurrentModel.Ativo}"/>
+    <control:ExtendedPicker ItemsSource="{Binding Sexos}" SelectedIndex="{Binding CurrentModel.IdSexo}"/>
+
+    <Button Text="Save" Command="{Binding CommandSave}"/>
+    <Label Text="{Binding DisplaySave}"></Label>
+
+  </StackLayout>
+</ContentPage>
